@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 0 auto;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s all;
+}
+figure{
+    width: 500px;
+    position: relative;
+    height: 300px;
+    margin: 50px 0px;
+    overflow: hidden;
+}
+
+/*     hover effect      */
+
+/*first*/
+.first:hover img{
+    transform: scale(2);
+}
+
+/*second*/
+.second:hover img{
+    transform: scale(2) rotate(30deg);
+}
+
+/*third*/
+.third img{
+    transform: scale(2);
+}
+.third:hover img{
+    transform: scale(1);
+}
+
+/*forth*/
+.forth::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 2px solid white;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all
+;}
+.forth img{
+    transform: scale(2);
+}
+.forth:hover img{
+    transform: scale(1);
+}
+.forth:hover::before{
+    opacity: 1 !important;
+    transform: translate(-50%,-50%) scale(4);
+}
+
+/*fifth*/
+.fifth::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    left: -10px;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: 0.5s all;
+}
+.fifth::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    right: -10px;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: 0.5s all;
+}
+.fifth img{
+    transform: scale(2);
+}
+.fifth:hover img{
+    transform: scale(1);
+}
+.fifth:hover::before{
+    opacity: 1 !important;
+    left: 100% !important;
+}
+.fifth:hover::after{
+    opacity: 1 !important;
+    right: 100% !important;
+}
+
+/*sixth*/
+.sixth::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    left: 50%;
+    border-radius: 50%;
+    top: 50%;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all
+;}
+.sixth img{
+    transform: scale(2);
+}
+.sixth:hover img{
+    transform: scale(1);
+}
+.sixth:hover::before{
+    opacity: 1 !important;
+    transform: translate(-50%,-50%) scale(15);
+}
+
+/*seventh*/
+.seventh::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all
+;}
+.seventh img{
+    transform: scale(2);
+}
+.seventh:hover img{
+    transform: scale(1);
+}
+.seventh:hover::before{
+    opacity: 1 !important;
+    width: 100%;
+    background-color: transparent;
+}
+
+/*eigth*/
+.eigth::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all ease-in;
+}
+.eigth::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all ease-in;
+}
+.eigth:hover::before{
+    opacity: 1 !important;
+    left: 100%;
+    top: 100%;
+    transform: scale(20);
+    background-color: transparent;
+}
+.eigth:hover::after{
+    opacity: 1 !important;
+    left: 0%;
+    top: 100%;
+    transform: scale(20);
+    background-color: transparent;
+}
+
+/*ninth*/
+.ninth::before{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    opacity: 0;;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: 0.5s all;
+;}
+.ninth:hover::before{
+    opacity: 1 !important;
+    animation: rotate 2s alternate infinite;
+}
+@keyframes rotate {
+    to{transform: translate(-50%,-50%) rotate(360deg) }
+}
